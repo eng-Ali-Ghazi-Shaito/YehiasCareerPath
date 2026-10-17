@@ -1,26 +1,237 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f7f7f5;
+  --text: #1f2933;
+  --muted: #5f6b7a;
+  --accent: #2563eb;
+  --card: #ffffff;
+  --border: #e3e5e8;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* ---------- Main navigation ---------- */
+header {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-nav-list,
+.dashboard-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
+  list-style: none;
+  margin: 0 auto;
+  padding: 1rem clamp(1rem, 2vw, 2rem);
+  max-width: 1200px;
+}
+
+.site-nav-list a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem 0;
+}
+
+/* ---------- Dashboard navigation ---------- */
+.dashboard-nav {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.dashboard-nav-list {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.dashboard-nav-list a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem 0;
+}
+
+/* ---------- Link interactions ---------- */
+.site-nav-list a:hover,
+.dashboard-nav-list a:hover {
+  text-decoration: underline;
+}
+
+.site-nav-list a:focus-visible,
+.dashboard-nav-list a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* ---------- Page container ---------- */
+main {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+h1 {
+  font-size: 1.8rem;
+  line-height: 1.3;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+
+.card p {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+main a {
+  color: var(--accent);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ---------- Cards ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.card {
+  min-width: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.card h2,
+.card h3 {
+  margin-top: 0;
+}
+
+.card ul {
+  padding-left: 1.25rem;
+}
+
+/* ---------- Plan checklist ---------- */
+.card .checklist {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.card .checklist li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.checklist label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  cursor: pointer;
+}
+
+.checklist input[type="checkbox"] {
+  margin-top: 0.4rem;
+  flex-shrink: 0;
+  accent-color: var(--accent);
+}
+
+/* ---------- Buttons ---------- */
+.button {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+}
+
+.button:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+/* ---------- Tablets ---------- */
+@media (min-width: 640px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Larger screens ---------- */
+@media (min-width: 900px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  main {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.page-intro {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Checklist layout */
+.card .checklist {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.card .checklist li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.checklist label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.checklist input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  accent-color: var(--accent);
 }

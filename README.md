@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Yehia's Career Path
 
-## Getting Started
+**Student:** Ali Shaito
 
-First, run the development server:
+## Project Description
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Yehia's Career Path is a small website built with Next.js 16. It helps Yehia, a Computer Science graduate, organize his two-month job-search goal. He can review his career plan, explore job opportunities, and track sample applications through a dashboard.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The project demonstrates file-based routing, dynamic routes, shared layouts, reusable sample data, and navigation with Next.js Link.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How to Run Locally
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Requirements: Node.js and npm.
 
-## Learn More
+1. Install the dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Start the development server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+3. Open http://localhost:3000 in your browser.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Check the production build:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm run build
+   ```
+
+## Assignment Questions
+
+### 1. Why did you use `await` when reading `params`?
+
+
+
+In Next.js 16 params is a promise used to extracte data from url and since working on server side by default we use asynchronous for unblocking and the async followed by await.
+
+### 2. Why is the route ID a string?
+
+All the url is string between quotes "" so since the id extracted from the route and the route from the url its string so need to parse to int if need to compare to database if it was integer but if using uuid no need.
+
+### 3. What belongs in the dashboard layout, and what belongs in each dashboard page?
+
+The dashboard layout contains the navigation shared by the dashboard pages and nested dashboard  overview page displays the number of applications, while the applications page displays the individual application records.
+

@@ -1,69 +1,42 @@
-import Image from "next/image";
 
-export default function Home() {
+
+/*"use client";
+//function let component remember a number.
+import { useState } from "react";
+//main page exported from this file.
+//page is react component and componenet means a function that describes what will be shown on screen.
+export default function Page() {
+  //completed take its inital value from useState and setCompleted control it. 
+  const [completed, setCompleted] = useState(0);
+//what will be shown on web and its html , javascript conbination.
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main>
+      <h1>Completed lessons: {completed}</h1>
+      //how setcompleted will know the previous value.
+      //answer:When you use the functional form:React automatically provides the previous/current value to this function
+      //So yes, this behavior is built into React's useState.
+      <button onClick={() => setCompleted(previous => previous + 1)}>
+        Complete one lesson
+      </button>
+      <button onClick={() => setCompleted(0)}>Reset</button>
+    </main>
+  );
+}*/
+import Link from "next/link"
+import "./globals.css";
+
+export default function HomePage() {
+  return (
+    <main>
+      <h1>WELCOME YEHIA TO YOUR ROADMAP</h1>
+      <h2>here you will find all what u need in clear way from plan to opportonities to dasboard</h2>
+      <h3>Always rememeber yehia consistency is the secret to reach your goal in two months</h3>
+      <h4>press here for your plan</h4>
+      <Link href="/plan">Plan</Link>
+      <h4>press here for your  opportonities</h4>
+      <Link href="/opportunities">opportunities</Link>
+      
+
+    </main>
   );
 }
